@@ -1,0 +1,18 @@
+#Apache tasks
+---
+- name: Health Check
+  action: ping
+
+- name: Updating Packages
+  yum: name=* state=latest
+
+- name: Installing Apache
+  yum:
+    name:
+      - httpd
+    state: present
+- name: Start Apache
+  service:
+    name: httpd
+    state: started
+    enabled: yes

@@ -1,0 +1,15 @@
+#Nginx tasks
+---
+- name: Health Check
+  action: ping
+
+- name: Update and upgrade apt packages
+  apt:
+    upgrade: yes
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Install Nginx
+  apt:
+    name: nginx
+    state: present
