@@ -1,11 +1,11 @@
 variable "key-path" {
   type    = string
-  default = "./aws-key-pair.pem"
+  default = "./terraform.pem"
 }
 
 variable "key-pair" {
-    type = string
-    default = "deployment"
+  type    = string
+  default = "terraform"
 }
 
 variable "ec2-remote-user" {

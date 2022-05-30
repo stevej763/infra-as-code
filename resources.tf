@@ -23,7 +23,7 @@ resource "aws_instance" "apache" {
   }
 
   provisioner "local-exec" {
-    command = "ansible-playbook -u ${var.ec2-remote-user} -i ${aws_instance.apache.public_ip}, --private-key ${var.key-path} apache.yml"
+    command = "ansible-playbook -u ${var.ec2-remote-user} -i ${aws_instance.apache.public_ip}, --private-key ${var.key-path} ansible/apache.yml"
   }
 }
 
@@ -51,7 +51,7 @@ resource "aws_instance" "nginx" {
   }
 
   provisioner "local-exec" {
-    command = "ansible-playbook -u ${var.ubuntu-remote-user} -i ${aws_instance.nginx.public_ip}, --private-key ${var.key-path} nginx.yml"
+    command = "ansible-playbook -u ${var.ubuntu-remote-user} -i ${aws_instance.nginx.public_ip}, --private-key ${var.key-path} ansible/nginx.yml"
   }
 }
 
